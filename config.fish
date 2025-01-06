@@ -34,7 +34,7 @@ fish_add_path "$HOME/.asdf/shims" # Ensure this gets preference
 
 set fish_greeting
 
-alias vim="nvim"
+# alias vim="nvim"
 alias g="git"
 
 alias grep="grep --color=auto"  # Highlight matches if output to shell
@@ -48,7 +48,8 @@ set -x PAGER "less"
 # Output ANSI control/color sequences
 set -x LESS "--RAW-CONTROL-CHARS"
 
-set -x EDITOR "nvim"
+# set -x EDITOR "nvim"
+set -x EDITOR "vim"
 
 set -x FZF_DEFAULT_COMMAND "fd --no-ignore --hidden --exclude node_modules"
 

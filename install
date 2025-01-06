@@ -126,19 +126,21 @@ fish_plugin jorgebucaran/autopair.fish # Auto-add closing parentheses/quotes/etc
 
 mkdir -p "$HOME/.cache" "$HOME/.config" "$HOME/.local/share"
 
-symlink "$HOME/.hushlogin" "$script_dir/hushlogin"
+#symlink "$HOME/.hushlogin" "$script_dir/hushlogin"
 
-cask alacritty
-xattr -d com.apple.quarantine /Applications/Alacritty.app # Allow running unsigned binary
+formula kitty
+#xattr -d com.apple.quarantine /Applications/Alacritty.app # Allow running unsigned binary
 cask font-inconsolata-go-nerd-font
-symlink "$HOME/.config/alacritty/alacritty.toml" "$script_dir/alacritty.toml"
+#symlink "$HOME/.config/alacritty/alacritty.toml" "$script_dir/alacritty.toml"
 
-formula asdf
-fish_plugin dteoh/fish-homebrew-asdf # asdf integration
+#formula asdf
+#fish_plugin dteoh/fish-homebrew-asdf # asdf integration
 
 formula bat
 formula coreutils # GNU versions of commands like ls, rm, mv etc.
 formula curl
+formula jq
+formula ag
 
 formula fd # Faster file search
 formula fzf # Fuzzy file search
@@ -184,8 +186,8 @@ if ! gpg --list-keys | grep ultimate >/dev/null 2>&1
   set signing_key (gpg --list-keys --with-subkey-fingerprints $primary_key | sed -n '/\[S\]/,+1p' | awk '/^[[:space:]]+[0-9A-F]{40}/ {print $1}')
   set local_git_config "\
 [user]
-  name = Shane da Silva
-  email = shane@dasilva.io
+  name = Hao Su
+  email = me@haosu.org
   signingkey = $signing_key
 [commit]
   gpgsign = true
@@ -214,15 +216,15 @@ formula tmux
 symlink "$HOME/.config/tmux/tmux.conf" "$script_dir/tmux.conf"
 
 cask 1password
-cask bartender
-cask cleanshot
-cask cloudflare-warp
+#cask bartender
+#cask cleanshot
+#cask cloudflare-warp
 cask google-chrome
-cask istat-menus
-cask standard-notes
+#cask istat-menus
+#cask standard-notes
 
-cask ghostty
-symlink "$HOME/.config/ghostty/config" "$script_dir/ghostty"
+#cask ghostty
+#symlink "$HOME/.config/ghostty/config" "$script_dir/ghostty"
 
 # Install our fish configuration last since it references plugins we installed above
 symlink "$HOME/.config/fish/config.fish" "$script_dir/config.fish"

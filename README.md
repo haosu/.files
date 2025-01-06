@@ -1,5 +1,7 @@
 # Dot Files
 
+Here I am, stealing Shane's bootstrapping config for another decade.
+
 My dot file configuration, optimized specifically for macOS using the [fish shell](https://fishshell.com/).
 
 After using [zsh](https://zsh.sourceforge.io/) for over a decade, it was time to move on.
@@ -17,7 +19,7 @@ The goal with this was simplification:
 Assuming you're on a brand-new machine, run:
 
 ```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/sds/.files/HEAD/bootstrap.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/haosu/.files/HEAD/bootstrap.sh)"
 ```
 
 ## Configuration
