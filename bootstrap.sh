@@ -29,6 +29,10 @@ cat - <<EOF > ~/Library/LaunchAgents/com.local.CapsLockLeftControlRemapping.plis
             {
               "HIDKeyboardModifierMappingSrc": 0x700000039,
               "HIDKeyboardModifierMappingDst": 0x7000000E0
+            },
+            {
+              "HIDKeyboardModifierMappingSrc": 0x7000000E0,
+              "HIDKeyboardModifierMappingDst": 0x700000029
             }
         ]}</string>
     </array>

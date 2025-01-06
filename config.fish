@@ -28,7 +28,7 @@ fish_add_path /opt/homebrew/opt/curl/bin # Not installed in default brew bin dir
 fish_add_path /opt/homebrew/opt/coreutils/libexec/gnubin # Use GNU core utils (`ls` etc) instead of macOS ones
 fish_add_path "$HOME/.files/git-helpers"
 
-fish_add_path "$HOME/.asdf/shims" # Ensure this gets preference
+# fish_add_path "$HOME/.asdf/shims" # Ensure this gets preference
 
 ###############################################################################
 
@@ -52,6 +52,25 @@ set -x LESS "--RAW-CONTROL-CHARS"
 set -x EDITOR "vim"
 
 set -x FZF_DEFAULT_COMMAND "fd --no-ignore --hidden --exclude node_modules"
+
+# Common shortcuts (don't care if there are previous mappings defined by system)
+alias ls="ls -G -h"
+alias la='ls -a'
+alias ll='ls -l'
+alias lal='ls -al'
+
+###############################################################################
+
+set -Ux FOO bar
+
+export PATH="$PATH:/Applications/IntelliJ IDEA.app/Contents/MacOS"
+export JAVA_HOME=$(/usr/libexec/java_home -v 15)
+
+###############################################################################
+
+source "$HOME/.cargo/env"
+
+###############################################################################
 
 if which gpgconf >/dev/null 2>&1
   if not pgrep gpg-agent >/dev/null
