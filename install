@@ -123,16 +123,18 @@ end
 
 fish_plugin ilancosman/tide@v6 # Prompt manager
 fish_plugin jorgebucaran/autopair.fish # Auto-add closing parentheses/quotes/etc while typing in shell
+fish_plugin vitallium/tokyonight-fish
+fish_config theme save "TokyoNight Night"
 
 mkdir -p "$HOME/.cache" "$HOME/.config" "$HOME/.local/share"
 
 #symlink "$HOME/.hushlogin" "$script_dir/hushlogin"
 
+#xattr -d com.apple.quarantine /Applications/Alacritty.app # Allow running unsigned binary
+#symlink "$HOME/.config/alacritty/alacritty.toml" "$script_dir/alacritty.toml"
 formula kitty
 symlink "$HOME/.config/kitty/kitty.conf" "$script_dir/kitty.conf"
-#xattr -d com.apple.quarantine /Applications/Alacritty.app # Allow running unsigned binary
 cask font-inconsolata-go-nerd-font
-#symlink "$HOME/.config/alacritty/alacritty.toml" "$script_dir/alacritty.toml"
 
 #formula asdf
 #fish_plugin dteoh/fish-homebrew-asdf # asdf integration
@@ -161,7 +163,7 @@ formula openssh
 symlink "$HOME/.gnupg/gpg-agent.conf" "$script_dir/gpg-agent.conf"
 chmod 700 ~/.gnupg # Fix permissions and output only if there was a change
 
-# Start GPG agent if it isn't already running (saves us entering password multiple times during install)
+Start GPG agent if it isn't already running (saves us entering password multiple times during install)
 if not pgrep gpg-agent >/dev/null
   echo "🏗️ Starting GPG agent..."
   gpgconf --launch gpg-agent
@@ -223,6 +225,8 @@ cask 1password
 cask google-chrome
 #cask istat-menus
 #cask standard-notes
+cask contexts
+cask moom
 
 #cask ghostty
 #symlink "$HOME/.config/ghostty/config" "$script_dir/ghostty"

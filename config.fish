@@ -22,11 +22,15 @@ export XDG_CACHE_HOME="$HOME/.cache"
 ###############################################################################
 # Update PATH with helpful utilities
 
+fish_add_path /usr/local/bin
+
 fish_add_path /opt/homebrew/bin
 fish_add_path /opt/homebrew/opt/curl/bin # Not installed in default brew bin dir
 
 fish_add_path /opt/homebrew/opt/coreutils/libexec/gnubin # Use GNU core utils (`ls` etc) instead of macOS ones
 fish_add_path "$HOME/.files/git-helpers"
+
+fish_add_path /Applications/IntelliJ IDEA.app/Contents/MacOS
 
 # fish_add_path "$HOME/.asdf/shims" # Ensure this gets preference
 
@@ -34,7 +38,7 @@ fish_add_path "$HOME/.files/git-helpers"
 
 set fish_greeting
 
-# alias vim="nvim"
+alias vim="nvim"
 alias g="git"
 
 alias grep="grep --color=auto"  # Highlight matches if output to shell
@@ -48,27 +52,29 @@ set -x PAGER "less"
 # Output ANSI control/color sequences
 set -x LESS "--RAW-CONTROL-CHARS"
 
-# set -x EDITOR "nvim"
-set -x EDITOR "vim"
+set -x EDITOR "nvim"
 
 set -x FZF_DEFAULT_COMMAND "fd --no-ignore --hidden --exclude node_modules"
 
 # Common shortcuts (don't care if there are previous mappings defined by system)
-alias ls="ls -G -h"
+set -Ux LS_COLORS Exfxcxdxbxegedabagacad
+alias ls="ls -Gh"
 alias la='ls -a'
 alias ll='ls -l'
 alias lal='ls -al'
 
 ###############################################################################
 
-set -Ux FOO bar
-
-export PATH="$PATH:/Applications/IntelliJ IDEA.app/Contents/MacOS"
 export JAVA_HOME=$(/usr/libexec/java_home -v 15)
 
-###############################################################################
+alias d-c=docker-compose
+alias d=docker
 
-# source "$HOME/.cargo/env"
+# Highlight matches if output to shell
+export GREP_OPTIONS="--color=auto"
+
+# Match highlight colour same as ack
+export GREP_COLOR="0;30;43"
 
 ###############################################################################
 
