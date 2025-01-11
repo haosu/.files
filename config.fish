@@ -56,12 +56,13 @@ set -x EDITOR "nvim"
 
 set -x FZF_DEFAULT_COMMAND "fd --no-ignore --hidden --exclude node_modules"
 
+eval "set $(dircolors -c)" # 'set' is hax
+
 # Common shortcuts (don't care if there are previous mappings defined by system)
-set -Ux LS_COLORS Exfxcxdxbxegedabagacad
-alias ls="ls -Gh"
-alias la='ls -a'
-alias ll='ls -l'
-alias lal='ls -al'
+alias ls="ls -Gh --color=auto"
+alias la='ls -a --color=auto'
+alias ll='ls -l --color=auto'
+alias lal='ls -al --color=auto'
 
 ###############################################################################
 
