@@ -30,7 +30,7 @@ fish_add_path /opt/homebrew/opt/curl/bin # Not installed in default brew bin dir
 fish_add_path /opt/homebrew/opt/coreutils/libexec/gnubin # Use GNU core utils (`ls` etc) instead of macOS ones
 fish_add_path "$HOME/.files/git-helpers"
 
-fish_add_path /Applications/IntelliJ IDEA.app/Contents/MacOS
+fish_add_path "/Applications/IntelliJ\ IDEA.app/Contents/MacOS/"
 
 # fish_add_path "$HOME/.asdf/shims" # Ensure this gets preference
 
@@ -105,6 +105,10 @@ function tmux -d "Start tmux session or connect to an existing session based on 
     # Otherwise just forward along the arguments given
     command tmux $argv
   end
+end
+
+function font_check
+  echo -e "normal\n\e[1mbold\e[0m\n\e[3mitalic\e[0m\n\e[4munderline\e[0m\n\e[9mstrikethrough\e[0m"
 end
 
 # Load any local configuration, if any
